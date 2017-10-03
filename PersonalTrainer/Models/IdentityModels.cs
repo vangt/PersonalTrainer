@@ -19,6 +19,7 @@ namespace PersonalTrainer.Models
         public string Weight { get; set; }
         public string Height { get; set; }
         public string Age { get; set; }
+        public string Email { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

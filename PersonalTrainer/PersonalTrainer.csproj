@@ -205,6 +205,10 @@
     <Compile Include="Migrations\201710031831273_Initial migration.Designer.cs">
       <DependentUpon>201710031831273_Initial migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710031837282_Added User Variables.cs" />
+    <Compile Include="Migrations\201710031837282_Added User Variables.Designer.cs">
+      <DependentUpon>201710031837282_Added User Variables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -287,6 +291,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710031831273_Initial migration.resx">
       <DependentUpon>201710031831273_Initial migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710031837282_Added User Variables.resx">
+      <DependentUpon>201710031837282_Added User Variables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
