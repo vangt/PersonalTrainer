@@ -209,8 +209,25 @@
     <Compile Include="Migrations\201710031837282_Added User Variables.Designer.cs">
       <DependentUpon>201710031837282_Added User Variables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710031845370_added email to identity model.cs" />
+    <Compile Include="Migrations\201710031845370_added email to identity model.Designer.cs">
+      <DependentUpon>201710031845370_added email to identity model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710031849295_Added user name to the required fill in for Registration.cs" />
+    <Compile Include="Migrations\201710031849295_Added user name to the required fill in for Registration.Designer.cs">
+      <DependentUpon>201710031849295_Added user name to the required fill in for Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710031853348_removed login email changed to username.cs" />
+    <Compile Include="Migrations\201710031853348_removed login email changed to username.Designer.cs">
+      <DependentUpon>201710031853348_removed login email changed to username.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710031912344_Added historymoel to keep track of weight.cs" />
+    <Compile Include="Migrations\201710031912344_Added historymoel to keep track of weight.Designer.cs">
+      <DependentUpon>201710031912344_Added historymoel to keep track of weight.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\HistoryModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -294,6 +311,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710031837282_Added User Variables.resx">
       <DependentUpon>201710031837282_Added User Variables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710031845370_added email to identity model.resx">
+      <DependentUpon>201710031845370_added email to identity model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710031849295_Added user name to the required fill in for Registration.resx">
+      <DependentUpon>201710031849295_Added user name to the required fill in for Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710031853348_removed login email changed to username.resx">
+      <DependentUpon>201710031853348_removed login email changed to username.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710031912344_Added historymoel to keep track of weight.resx">
+      <DependentUpon>201710031912344_Added historymoel to keep track of weight.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
