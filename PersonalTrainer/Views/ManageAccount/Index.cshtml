@@ -38,5 +38,18 @@
 
 <p>Activity Level: @Model.ActivityLevel</p>
 
+@if (Model.LastUpdate == null)
+{
+    <p>Last Update: @Model.LastUpdate</p>
+}
+else
+{
+<p>Last Update: @Model.LastUpdate.Value.ToString("MM/dd/yyyy")</p>
+if (DateTime.Today >= (Model.LastUpdate.Value.AddDays(7)))
+{
+    <p style="color:red">It has been 1 week or over since you last updated your progress.  Please use the link below to update.</p>
+}
+}
+
 <p>To change your training information please click here: @Html.ActionLink("Update Training Profile", "ProfileInfo", "ManageAccount")</p>
 

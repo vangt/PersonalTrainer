@@ -78,6 +78,7 @@ namespace PersonalTrainer.Controllers
             user.Weight = userProfile.Weight;
             user.Gender = userProfile.Gender;
             user.ActivityLevel = userProfile.ActivityLevel;
+            user.LastUpdate = DateTime.Today;
 
             _context.SaveChanges();
 

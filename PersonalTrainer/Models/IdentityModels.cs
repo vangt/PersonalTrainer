@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
+using System;
 
 namespace PersonalTrainer.Models
 {
@@ -24,6 +25,8 @@ namespace PersonalTrainer.Models
         public string ActivityLevel { get; set; }
         public List<string> ActivityList { get; set; }
         public List<string> GenderList { get; set; }
+        public DateTime? LastUpdate { get; set; }
+        public bool AlertChecker { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
