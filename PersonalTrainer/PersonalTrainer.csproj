@@ -226,6 +226,26 @@
     <Compile Include="Migrations\201710031912344_Added historymoel to keep track of weight.Designer.cs">
       <DependentUpon>201710031912344_Added historymoel to keep track of weight.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710031923433_added activity level to user.cs" />
+    <Compile Include="Migrations\201710031923433_added activity level to user.Designer.cs">
+      <DependentUpon>201710031923433_added activity level to user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710031931022_added list of activities.cs" />
+    <Compile Include="Migrations\201710031931022_added list of activities.Designer.cs">
+      <DependentUpon>201710031931022_added list of activities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710032026125_changed register model.cs" />
+    <Compile Include="Migrations\201710032026125_changed register model.Designer.cs">
+      <DependentUpon>201710032026125_changed register model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710041154237_Test fix for false user error.cs" />
+    <Compile Include="Migrations\201710041154237_Test fix for false user error.Designer.cs">
+      <DependentUpon>201710041154237_Test fix for false user error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710041201335_deleted username property.cs" />
+    <Compile Include="Migrations\201710041201335_deleted username property.Designer.cs">
+      <DependentUpon>201710041201335_deleted username property.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HistoryModel.cs" />
@@ -295,6 +315,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\ManageAccount\Index.cshtml" />
+    <Content Include="Views\ManageAccount\ProfileInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -325,6 +346,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710031912344_Added historymoel to keep track of weight.resx">
       <DependentUpon>201710031912344_Added historymoel to keep track of weight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710031923433_added activity level to user.resx">
+      <DependentUpon>201710031923433_added activity level to user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710031931022_added list of activities.resx">
+      <DependentUpon>201710031931022_added list of activities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710032026125_changed register model.resx">
+      <DependentUpon>201710032026125_changed register model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710041154237_Test fix for false user error.resx">
+      <DependentUpon>201710041154237_Test fix for false user error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710041201335_deleted username property.resx">
+      <DependentUpon>201710041201335_deleted username property.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

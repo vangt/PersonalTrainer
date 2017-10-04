@@ -21,10 +21,17 @@ namespace PersonalTrainer.Controllers
             return View(user);
         }
 
+        public ActionResult UserInfo()
+        {
+            return View();
+        }
+
         public ActionResult ProfileInfo()
         {
             var userName = User.Identity.GetUserName();
             var user = _context.Users.Where(x => x.UserName == userName).First();
+            List<string> activityLevel = new List<string>() { "No Activity", "Low Activity", "Moderately Activity", "High Activity" };
+            user.ActivityList = activityLevel;
 
             return View(user);
         }
