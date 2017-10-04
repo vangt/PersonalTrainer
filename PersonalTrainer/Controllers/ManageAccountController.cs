@@ -23,6 +23,9 @@ namespace PersonalTrainer.Controllers
 
         public ActionResult UserInfo()
         {
+            var userName = User.Identity.GetUserName();
+            var user = _context.Users.Where(x => x.UserName == userName).First();
+
             return View();
         }
 

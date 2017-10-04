@@ -246,6 +246,10 @@
     <Compile Include="Migrations\201710041201335_deleted username property.Designer.cs">
       <DependentUpon>201710041201335_deleted username property.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710041214007_fixed login issue.cs" />
+    <Compile Include="Migrations\201710041214007_fixed login issue.Designer.cs">
+      <DependentUpon>201710041214007_fixed login issue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HistoryModel.cs" />
@@ -253,6 +257,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\PersonalInfoUpdaterViewModel.cs" />
+    <Compile Include="ViewModels\ProfileUpdaterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -316,6 +322,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\ManageAccount\Index.cshtml" />
     <Content Include="Views\ManageAccount\ProfileInfo.cshtml" />
+    <Content Include="Views\ManageAccount\UserInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -361,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710041201335_deleted username property.resx">
       <DependentUpon>201710041201335_deleted username property.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710041214007_fixed login issue.resx">
+      <DependentUpon>201710041214007_fixed login issue.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
