@@ -250,6 +250,14 @@
     <Compile Include="Migrations\201710041214007_fixed login issue.Designer.cs">
       <DependentUpon>201710041214007_fixed login issue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710041241319_made viewmodels to update personal informaiton.cs" />
+    <Compile Include="Migrations\201710041241319_made viewmodels to update personal informaiton.Designer.cs">
+      <DependentUpon>201710041241319_made viewmodels to update personal informaiton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710041359106_added gender and a list.cs" />
+    <Compile Include="Migrations\201710041359106_added gender and a list.Designer.cs">
+      <DependentUpon>201710041359106_added gender and a list.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HistoryModel.cs" />
@@ -371,6 +379,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710041214007_fixed login issue.resx">
       <DependentUpon>201710041214007_fixed login issue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710041241319_made viewmodels to update personal informaiton.resx">
+      <DependentUpon>201710041241319_made viewmodels to update personal informaiton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710041359106_added gender and a list.resx">
+      <DependentUpon>201710041359106_added gender and a list.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

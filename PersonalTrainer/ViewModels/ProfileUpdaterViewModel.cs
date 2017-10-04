@@ -33,6 +33,10 @@ namespace PersonalTrainer.ViewModels
         public string Weight { get; set; }
 
         [Required]
+        [Display(Name = "Gender")]
+        public string Gender { get; set; }
+
+        [Required]
         [Display(Name = "Your Activity Level")]
         public string ActivityLevel { get; set; }
     }

@@ -5,6 +5,7 @@
 }
 
 <h2>User Profile</h2>
+<p>Personal information.</p>
 
 <p>First Name: @Model.FirstName</p>
 
@@ -20,7 +21,12 @@
 
 <p>Phone: @Model.Phone</p>
 
+<p>To change your peronal information please click here: @Html.ActionLink("Edit Personal Info","UserInfo", "ManageAccount")</p>
+
+<br style="grid-row-span:3"/>
+
 <h2>Training Profile</h2>
+<p>Information used for training purposes.</p>
 
 <p>Age: @Model.Age</p>
 
@@ -28,4 +34,9 @@
 
 <p>Weight: @Model.Weight</p>
 
+<p>Gender: @Model.Gender</p>
+
 <p>Activity Level: @Model.ActivityLevel</p>
+
+<p>To change your training information please click here: @Html.ActionLink("Update Training Profile", "ProfileInfo", "ManageAccount")</p>
+

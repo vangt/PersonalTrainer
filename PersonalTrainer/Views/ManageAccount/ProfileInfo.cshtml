@@ -1,4 +1,4 @@
-﻿@model PersonalTrainer.Models.ApplicationUser
+﻿@model PersonalTrainer.ViewModels.ProfileUpdaterViewModel
 @{
     ViewBag.Title = "ProfileInfo";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,8 +26,20 @@
     </div>
 </div>
 <div class="form-group">
+    @Html.LabelFor(m => m.Gender, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.DropDownListFor(m => m.Gender, new SelectList(Model.User.GenderList))
+    </div>
+</div>
+<div class="form-group">
     @Html.LabelFor(m => m.ActivityLevel, new { @class = "col-md-2 control-label" })
     <div class="col-md-10">
-        @Html.ListBoxFor(m => m.ActivityLevel, new SelectList(Model.ActivityList))
+        @Html.DropDownListFor(m => m.ActivityLevel, new SelectList(Model.User.ActivityList))
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" class="btn btn-default" value="Update" />
     </div>
 </div>

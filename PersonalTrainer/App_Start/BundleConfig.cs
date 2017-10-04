@@ -24,7 +24,7 @@ namespace PersonalTrainer
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-superhero.css",
+                      "~/Content/bootstrap-yeti.css",
                       "~/Content/site.css"));
         }
     }
