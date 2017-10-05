@@ -151,7 +151,7 @@ namespace PersonalTrainer.Controllers
 
         public ActionResult Calories()
         {
-
+            
 
             return View();
         }

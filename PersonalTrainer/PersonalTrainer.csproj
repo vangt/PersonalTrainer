@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CalorieCounterController.cs" />
     <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageAccountController.cs" />
@@ -307,6 +308,10 @@
     <Compile Include="Migrations\201710051622078_Added date upload image.Designer.cs">
       <DependentUpon>201710051622078_Added date upload image.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710051938573_added foodinputmodel and calorieconter controller, viewmodel.cs" />
+    <Compile Include="Migrations\201710051938573_added foodinputmodel and calorieconter controller, viewmodel.Designer.cs">
+      <DependentUpon>201710051938573_added foodinputmodel and calorieconter controller, viewmodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FoodInputModels.cs" />
@@ -316,6 +321,7 @@
     <Compile Include="Models\UserImgPathModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CalorieCounterViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\PersonalInfoUpdaterViewModel.cs" />
     <Compile Include="ViewModels\ProfileUpdaterViewModel.cs" />
@@ -389,6 +395,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ProfileImages\" />
+    <Folder Include="Views\CalorieCounter\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -476,6 +483,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710051622078_Added date upload image.resx">
       <DependentUpon>201710051622078_Added date upload image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710051938573_added foodinputmodel and calorieconter controller, viewmodel.resx">
+      <DependentUpon>201710051938573_added foodinputmodel and calorieconter controller, viewmodel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
