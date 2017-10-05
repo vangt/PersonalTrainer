@@ -3,6 +3,7 @@ using PersonalTrainer.Models;
 using PersonalTrainer.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -80,8 +81,59 @@ namespace PersonalTrainer.Controllers
             user.ActivityLevel = userProfile.ActivityLevel;
             user.LastUpdate = DateTime.Today;
 
+            ProfileUpdatesModels history = new ProfileUpdatesModels();
+            history.UserId = user.Id;
+            history.Age = userProfile.Age;
+            history.Weight = userProfile.Weight;
+            history.Height = userProfile.Height;
+            history.Gender = userProfile.Gender;
+            history.ActivityLevel = userProfile.ActivityLevel;
+            history.DateOfLog = DateTime.Today;
+
+            _context.ProfileHistory.Add(history);
             _context.SaveChanges();
 
+            return RedirectToAction("Index", "ManageAccount");
+        }
+
+        public ActionResult UploadPicture(HttpPostedFileBase file)
+        {
+            var userName = User.Identity.GetUserName();
+            var user = _context.Users.Where(x => x.UserName == userName).First();
+
+            if (file != null)
+            {
+                string pic = Path.GetFileName(file.FileName);
+                string path = "";
+
+                try
+                {
+                    string userPath = Server.MapPath("~/ProfileImages/" + user.Id);
+
+                    if (Directory.Exists(userPath))
+                    {
+                        path = Path.Combine(userPath, pic);
+                    }
+                    else
+                    {
+                        DirectoryInfo di = Directory.CreateDirectory(userPath);
+                        path = Path.Combine(userPath, pic);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+                finally { }
+
+                file.SaveAs(path);
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    file.InputStream.CopyTo(ms);
+                    byte[] array = ms.GetBuffer();
+                }
+            }
             return RedirectToAction("Index", "ManageAccount");
         }
     }

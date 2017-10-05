@@ -1,0 +1,31 @@
+﻿@model PersonalTrainer.ViewModels.HistoryViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered table-hover" ">
+    <thead>
+        <tr>
+            <th>Weight History</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Date</th>
+            <th>Weight</th>
+
+        </tr>
+        @foreach (var date in Model.ProfileList)
+        {
+            <tr>
+                <td>@date.DateOfLog.Value.ToString("MM-dd-yyyy")</td>
+                <td>@date.Weight</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<img src="~/Views/History/ChartPartialView.cshtml" height="400" width="600"/>

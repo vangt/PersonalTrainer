@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageAccountController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -266,14 +267,38 @@
     <Compile Include="Migrations\201710041441395_bool statment to see if alert would trigger.Designer.cs">
       <DependentUpon>201710041441395_bool statment to see if alert would trigger.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710041545447_Added s to model names.cs" />
+    <Compile Include="Migrations\201710041545447_Added s to model names.Designer.cs">
+      <DependentUpon>201710041545447_Added s to model names.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710041550543_check database.cs" />
+    <Compile Include="Migrations\201710041550543_check database.Designer.cs">
+      <DependentUpon>201710041550543_check database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710041558047_deleted history, adding profile update table.cs" />
+    <Compile Include="Migrations\201710041558047_deleted history, adding profile update table.Designer.cs">
+      <DependentUpon>201710041558047_deleted history, adding profile update table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710041859166_added date to the profilehistory.cs" />
+    <Compile Include="Migrations\201710041859166_added date to the profilehistory.Designer.cs">
+      <DependentUpon>201710041859166_added date to the profilehistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710041910025_Profile View model.cs" />
+    <Compile Include="Migrations\201710041910025_Profile View model.Designer.cs">
+      <DependentUpon>201710041910025_Profile View model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710051233520_added goals.cs" />
+    <Compile Include="Migrations\201710051233520_added goals.Designer.cs">
+      <DependentUpon>201710051233520_added goals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\HistoryModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\ProfileUpdatesModel.cs" />
+    <Compile Include="Models\ProfileUpdatesModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\PersonalInfoUpdaterViewModel.cs" />
     <Compile Include="ViewModels\ProfileUpdaterViewModel.cs" />
   </ItemGroup>
@@ -340,6 +365,7 @@
     <Content Include="Views\ManageAccount\Index.cshtml" />
     <Content Include="Views\ManageAccount\ProfileInfo.cshtml" />
     <Content Include="Views\ManageAccount\UserInfo.cshtml" />
+    <Content Include="Views\History\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -400,6 +426,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710041441395_bool statment to see if alert would trigger.resx">
       <DependentUpon>201710041441395_bool statment to see if alert would trigger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710041545447_Added s to model names.resx">
+      <DependentUpon>201710041545447_Added s to model names.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710041550543_check database.resx">
+      <DependentUpon>201710041550543_check database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710041558047_deleted history, adding profile update table.resx">
+      <DependentUpon>201710041558047_deleted history, adding profile update table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710041859166_added date to the profilehistory.resx">
+      <DependentUpon>201710041859166_added date to the profilehistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710041910025_Profile View model.resx">
+      <DependentUpon>201710041910025_Profile View model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710051233520_added goals.resx">
+      <DependentUpon>201710051233520_added goals.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

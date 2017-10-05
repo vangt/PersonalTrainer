@@ -33,6 +33,13 @@ namespace PersonalTrainer.ViewModels
         public string Weight { get; set; }
 
         [Required]
+        [MaxLength(3)]
+        [MinLength(2)]
+        [RegularExpression("[0-9]*$", ErrorMessage = "Goal must be numeric")]
+        [Display(Name = "Goal Weight (POUNDS)")]
+        public string GoalWeight { get; set; }
+
+        [Required]
         [Display(Name = "Gender")]
         public string Gender { get; set; }
 

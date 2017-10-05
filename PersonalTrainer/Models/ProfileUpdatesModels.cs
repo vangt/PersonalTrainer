@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PersonalTrainer.Models
 {
-    public class ProfileUpdatesModel
+    public class ProfileUpdatesModels
     {
         public int Id { get; set; }
 
@@ -20,5 +20,7 @@ namespace PersonalTrainer.Models
         public string ActivityLevel { get; set; }
 
         public string Gender { get; set; }
+
+        public DateTime? DateOfLog { get; set; }
     }
 }

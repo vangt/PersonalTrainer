@@ -22,6 +22,8 @@ namespace PersonalTrainer.Models
         public string Height { get; set; }
         public string Age { get; set; }
         public string Gender { get; set; }
+        public string Goal { get; set; }
+        public string GoalWeight { get; set; }
         public string ActivityLevel { get; set; }
         public List<string> ActivityList { get; set; }
         public List<string> GenderList { get; set; }
@@ -39,6 +41,8 @@ namespace PersonalTrainer.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<ProfileUpdatesModels> ProfileHistory { get; set; }
+        
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
