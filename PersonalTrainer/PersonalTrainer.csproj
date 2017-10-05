@@ -291,11 +291,24 @@
     <Compile Include="Migrations\201710051233520_added goals.Designer.cs">
       <DependentUpon>201710051233520_added goals.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710051354581_changed alert to imgs.cs" />
+    <Compile Include="Migrations\201710051354581_changed alert to imgs.Designer.cs">
+      <DependentUpon>201710051354581_changed alert to imgs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710051423407_added user img path model.cs" />
+    <Compile Include="Migrations\201710051423407_added user img path model.Designer.cs">
+      <DependentUpon>201710051423407_added user img path model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710051427413_added img table.cs" />
+    <Compile Include="Migrations\201710051427413_added img table.Designer.cs">
+      <DependentUpon>201710051427413_added img table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProfileUpdatesModels.cs" />
+    <Compile Include="Models\UserImgPathModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
@@ -366,6 +379,7 @@
     <Content Include="Views\ManageAccount\ProfileInfo.cshtml" />
     <Content Include="Views\ManageAccount\UserInfo.cshtml" />
     <Content Include="Views\History\Index.cshtml" />
+    <Content Include="Views\ManageAccount\UploadPicture.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -444,6 +458,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710051233520_added goals.resx">
       <DependentUpon>201710051233520_added goals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710051354581_changed alert to imgs.resx">
+      <DependentUpon>201710051354581_changed alert to imgs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710051423407_added user img path model.resx">
+      <DependentUpon>201710051423407_added user img path model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710051427413_added img table.resx">
+      <DependentUpon>201710051427413_added img table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

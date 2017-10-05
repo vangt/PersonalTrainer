@@ -28,7 +28,7 @@ namespace PersonalTrainer.Models
         public List<string> ActivityList { get; set; }
         public List<string> GenderList { get; set; }
         public DateTime? LastUpdate { get; set; }
-        public bool AlertChecker { get; set; }
+        public IEnumerable<UserImgPathModel> UserImg { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -42,6 +42,7 @@ namespace PersonalTrainer.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<ProfileUpdatesModels> ProfileHistory { get; set; }
+        public DbSet<UserImgPathModel> ImgPaths { get; set; }
         
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

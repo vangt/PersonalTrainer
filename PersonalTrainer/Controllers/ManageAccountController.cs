@@ -127,12 +127,16 @@ namespace PersonalTrainer.Controllers
                 finally { }
 
                 file.SaveAs(path);
+                
 
                 using (MemoryStream ms = new MemoryStream())
                 {
                     file.InputStream.CopyTo(ms);
                     byte[] array = ms.GetBuffer();
                 }
+
+                
+                _context.SaveChanges();
             }
             return RedirectToAction("Index", "ManageAccount");
         }

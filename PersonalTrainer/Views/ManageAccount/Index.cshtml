@@ -55,10 +55,23 @@ if (DateTime.Today >= (Model.LastUpdate.Value.AddDays(7)))
 
 
 <h3>Upload Photos</h3>
+@try
+{
+    if (Model.UserName == "1")
+    {
+        foreach (var path in Model.UserImg)
+        {
+    <div>
+        <img src="@path.ToString()" height="100" width="50" />
+    </div>
+        }
+    }
+}
+catch (Exception e)
+{
 
-
-<img src="" />
-
+}
+finally { }
 @using (Html.BeginForm("UploadPicture", "ManageAccount", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <label for="file">Upload Progress Photo:</label>
