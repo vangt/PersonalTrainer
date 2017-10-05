@@ -19,6 +19,8 @@ namespace PersonalTrainer.Controllers
         {
             var userName = User.Identity.GetUserName();
             var user = _context.Users.Where(x => x.UserName == userName).First();
+            var imglist = _context.ImgPaths.Where(u => u.UserId == user.Id).ToList();
+            user.UserImg = imglist;
 
             return View(user);
         }
@@ -135,10 +137,23 @@ namespace PersonalTrainer.Controllers
                     byte[] array = ms.GetBuffer();
                 }
 
-                
+                UserImgPathModel userImgPath = new UserImgPathModel();
+
+                userImgPath.UserId = user.Id;
+                userImgPath.Path = "~/ProfileImages/" + user.Id + "/" + pic;
+                userImgPath.DateUploaded = DateTime.Today;
+
+                _context.ImgPaths.Add(userImgPath);                
                 _context.SaveChanges();
             }
             return RedirectToAction("Index", "ManageAccount");
+        }
+
+        public ActionResult Calories()
+        {
+
+
+            return View();
         }
     }
 }

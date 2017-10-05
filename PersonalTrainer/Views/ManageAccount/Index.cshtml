@@ -21,7 +21,7 @@
 
 <p>Phone: @Model.Phone</p>
 
-<p>To change your peronal information please click here: @Html.ActionLink("Edit Personal Info","UserInfo", "ManageAccount")</p>
+<p>To change your peronal information please click here: @Html.ActionLink("Edit Personal Info", "UserInfo", "ManageAccount")</p>
 
 <br style="grid-row-span:3"/>
 
@@ -35,6 +35,24 @@
 <p>Weight: @Model.Weight</p>
 
 <p>Gender: @Model.Gender</p>
+
+@{ decimal bmi = 0;}
+
+@try
+{
+    bmi = (decimal.Parse(@Model.Weight) * 703) / (decimal.Parse(@Model.Height) * decimal.Parse(@Model.Height));
+    bmi = Math.Round(bmi * 100) / 100;
+}
+catch (Exception e)
+{
+
+}
+finally
+{
+
+}
+
+<p>Current BMI: @bmi  <a href="http://www.heart.org/HEARTORG/HealthyLiving/WeightManagement/BodyMassIndex/Body-Mass-Index-In-Adults-BMI-Calculator-for-Adults_UCM_307849_Article.jsp?gclid=CjwKEAjwsNfOBRCWl_HevZSJ2i0SJABiE2qWyr8dVOSNRHgplUVdHEfYqpqvTwY6gUnxx3Jp4awvGhoC38nw_wcB#.WdZ4YVtSxD8" target="_blank" title="American Heart Association">What is BMI?</a></p>
 
 <p>Activity Level: @Model.ActivityLevel</p>
 
@@ -55,14 +73,18 @@ if (DateTime.Today >= (Model.LastUpdate.Value.AddDays(7)))
 
 
 <h3>Upload Photos</h3>
+
 @try
 {
-    if (Model.UserName == "1")
+    if (Model.UserImg != null)
     {
         foreach (var path in Model.UserImg)
         {
     <div>
-        <img src="@path.ToString()" height="100" width="50" />
+        <a href="@Url.Content(@path.Path)" target="_blank"><img src="@Url.Content(@path.Path)" style="height:200px;width:100;" /></a>
+        <br />
+        <p>Date uploaded: @path.DateUploaded.Value.ToString("MM/dd/yyyy")</p>
+        <br />
     </div>
         }
     }
@@ -71,10 +93,13 @@ catch (Exception e)
 {
 
 }
-finally { }
+finally
+{
+
+}
 @using (Html.BeginForm("UploadPicture", "ManageAccount", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <label for="file">Upload Progress Photo:</label>
-    <input type="file" name="file" id="file" style="width: 100%;" />
+    <input type="file" name="file" id="file" style="height: 100%; width: 100%" />
     <input type="submit" value="Upload" class="submit" />
 }

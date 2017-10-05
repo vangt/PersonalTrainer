@@ -303,8 +303,13 @@
     <Compile Include="Migrations\201710051427413_added img table.Designer.cs">
       <DependentUpon>201710051427413_added img table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710051622078_Added date upload image.cs" />
+    <Compile Include="Migrations\201710051622078_Added date upload image.Designer.cs">
+      <DependentUpon>201710051622078_Added date upload image.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FoodInputModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProfileUpdatesModels.cs" />
@@ -383,6 +388,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ProfileImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -467,6 +473,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710051427413_added img table.resx">
       <DependentUpon>201710051427413_added img table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710051622078_Added date upload image.resx">
+      <DependentUpon>201710051622078_Added date upload image.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

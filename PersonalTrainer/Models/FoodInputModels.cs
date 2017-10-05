@@ -5,14 +5,10 @@ using System.Web;
 
 namespace PersonalTrainer.Models
 {
-    public class UserImgPathModel
+    public class FoodInputModels
     {
         public int Id { get; set; }
 
-        public string Path { get; set; }
 
-        public DateTime? DateUploaded { get; set; }
-
-        public string UserId { get; set; }
     }
 }
