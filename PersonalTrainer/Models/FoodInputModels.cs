@@ -22,5 +22,11 @@ namespace PersonalTrainer.Models
         public string Carb { get; set; }
 
         public string Fat { get; set; }
+
+        public string Weight { get; set; }
+
+        public string Measure { get; set; }
+
+        public DateTime? DateAdded { get; set; }
     }
 }

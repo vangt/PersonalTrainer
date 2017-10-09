@@ -43,6 +43,8 @@ namespace PersonalTrainer.Models
     {
         public DbSet<ProfileUpdatesModels> ProfileHistory { get; set; }
         public DbSet<UserImgPathModel> ImgPaths { get; set; }
+
+        public DbSet<FoodInputModels> FoodInput { get; set; }
         
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

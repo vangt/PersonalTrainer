@@ -1,0 +1,62 @@
+﻿@model PersonalTrainer.ViewModels.SearchCaloriesViewModel
+@{
+    ViewBag.Title = "InputFood";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>InputFood</h2>
+
+@*<p>Here you can input food to get a calorie update.  If the food is not listed you can input it manually here: @Html.ActionLink()</p>*@
+
+<h4>Search Parameters</h4>
+
+<p>Please enter the product name ( ex. ).</p>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.SearchWordInput, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.SearchWordInput, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Search" />
+        </div>
+    </div>
+}
+
+@try
+{
+    if (Model.SearchWordInput != null && Model.FoodApi != null)
+    {
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Weight History</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Date</th>
+                    <th>Weight</th>
+
+                </tr>
+                @foreach (var items in Model.FoodApi.List.Item)
+                {
+                    <tr>
+                        <td>@items.Name</td>
+                        <td>@Html.ActionLink("Add", "AddItem", "CalorieCounter", new { id = items.Ndbno}, null)</td>
+                        <td>@Html.ActionLink("View", "ViewItem", "CalorieCounter", new { id = items.Ndbno}, null)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+catch (Exception e)
+{ }
+finally
+{ }

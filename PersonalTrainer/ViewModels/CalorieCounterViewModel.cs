@@ -11,5 +11,7 @@ namespace PersonalTrainer.ViewModels
         public ApplicationUser User { get; set; }
 
         public IEnumerable<FoodInputModels> Foodlist { get; set; }
+
+        public SearchCaloriesViewModel SearchCalories { get; set; }
     }
 }
