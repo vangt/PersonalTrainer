@@ -333,6 +333,10 @@
     <Compile Include="Migrations\201710092338146_added view models.Designer.cs">
       <DependentUpon>201710092338146_added view models.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710101650473_check.cs" />
+    <Compile Include="Migrations\201710101650473_check.Designer.cs">
+      <DependentUpon>201710101650473_check.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FoodAPI.cs" />
@@ -345,10 +349,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CalorieCounterViewModel.cs" />
+    <Compile Include="ViewModels\ChartViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\PersonalInfoUpdaterViewModel.cs" />
     <Compile Include="ViewModels\ProfileUpdaterViewModel.cs" />
     <Compile Include="ViewModels\SearchCaloriesViewModel.cs" />
+    <Compile Include="ViewModels\WeightViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -419,6 +425,9 @@
     <Content Include="Views\CalorieCounter\CaloricChart.cshtml" />
     <Content Include="Views\CalorieCounter\InputFood.cshtml" />
     <Content Include="Views\CalorieCounter\InputedItem.cshtml" />
+    <Content Include="Views\CalorieCounter\ViewItem.cshtml" />
+    <Content Include="Views\CalorieCounter\InputDetails.cshtml" />
+    <Content Include="Views\History\WeightChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -525,6 +534,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710092338146_added view models.resx">
       <DependentUpon>201710092338146_added view models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710101650473_check.resx">
+      <DependentUpon>201710101650473_check.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

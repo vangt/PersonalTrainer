@@ -4,7 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Weight History</h2>
+
+<img src="@Url.Action("WeightChart", "History")" height="400" width="600" />
+
 
 <table class="table table-bordered table-hover" ">
     <thead>
@@ -27,5 +30,3 @@
         }
     </tbody>
 </table>
-
-<img src="~/Views/History/ChartPartialView.cshtml" height="400" width="600"/>

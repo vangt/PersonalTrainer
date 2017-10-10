@@ -1,35 +1,16 @@
-﻿@model PersonalTrainer.ViewModels.CalorieCounterViewModel
+﻿
+@model PersonalTrainer.ViewModels.ChartViewModel
 @{
     Layout = null;
 }
 
-<h2>CaloricChart</h2>
-
-@{ var xAxis1 = new List<string>();}
-@{ var xAxis2 = new List<string>();}
-@{ var xAxis3 = new List<string>();}
-@{ var xAxis4 = new List<string>();}
-@{ var yAxis = new List<string>();}
-
-@foreach (var calorie in Model.Foodlist)
-{
-    xAxis1.Add(calorie.Calories);
-    xAxis2.Add(calorie.Protien);
-    xAxis3.Add(calorie.Carb);
-    xAxis4.Add(calorie.Fat);
-}
-
-@foreach (var date in Model.Foodlist)
-{
-    yAxis.Add(date.DateAdded.Value.ToString("MM/dd/yyyy"));
-}
-
 @{
-    var myChart = new Chart(width: 600, height: 400)
-    .AddTitle("Chart Title")
+    var myChart = new Chart(width:600, height:400)
+    .AddTitle("Caloric Intake")
     .AddSeries(
-    name: "Employee",
-    xValue: new[] { xAxis1, xAxis2, xAxis3, xAxis4 },
-    yValues: yAxis)
-    .Write("png");
+    name: "Calorie Intake",
+    chartType: "line",
+    xValue: Model.DateAdded,
+    yValues: Model.Calories)
+    .Write();
 }

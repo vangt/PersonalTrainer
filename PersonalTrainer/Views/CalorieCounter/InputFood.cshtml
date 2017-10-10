@@ -4,11 +4,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>InputFood</h2>
+<h2>Add A Food Item</h2>
 
-@*<p>Here you can input food to get a calorie update.  If the food is not listed you can input it manually here: @Html.ActionLink()</p>*@
+<br style="grid-row-span:2" />
+
+<p>Here you can input food to get a calorie update (Lists the of 25 options, please try to be specific).</p>
+<p> If the food is not listed you can input it manually here: @Html.ActionLink("Add Item", "InputDetails", "CalorieCounter")</p>
+
+<br style="grid-row-span:3" />
 
 <h4>Search Parameters</h4>
+
+<br style="grid-row-span:2" />
 
 <p>Please enter the product name ( ex. ).</p>
 
@@ -20,7 +27,7 @@
             @Html.TextBoxFor(m => m.SearchWordInput, new { @class = "form-control" })
         </div>
     </div>
-
+    <br />
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Search" />
@@ -32,7 +39,7 @@
 {
     if (Model.SearchWordInput != null && Model.FoodApi != null)
     {
-        <table class="table table-bordered table-hover">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Weight History</th>

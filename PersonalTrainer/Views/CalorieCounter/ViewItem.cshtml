@@ -1,0 +1,21 @@
+﻿@model PersonalTrainer.Models.FoodInputModels
+@{
+    ViewBag.Title = "ViewItem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.FoodName</h2>
+
+<p>Weight: @Model.Weight</p>
+
+<p>Calories: @Model.Calories</p>
+
+<p>Fats: @Model.Fat</p>
+
+<p>Carbohydrates: @Model.Carb</p>
+
+<p>Protiens: @Model.Protien</p>
+
+<p>Measure: @Model.Measure</p>
+
+<p>@Html.ActionLink("ADD", "AddItem", "CalorieCounter", new { id = Model.FoodId }, null)</p>

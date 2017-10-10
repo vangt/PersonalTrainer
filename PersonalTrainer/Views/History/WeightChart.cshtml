@@ -1,0 +1,15 @@
+﻿@model PersonalTrainer.ViewModels.WeightViewModel
+@{
+    Layout = null;
+}
+
+@{
+    var myChart = new Chart(width: 600, height: 400)
+    .AddTitle("Weight")
+    .AddSeries(
+    name: "Weight Chart",
+    chartType: "line",
+    xValue: Model.DateAdded,
+    yValues: Model.Weight)
+    .Write();
+}

@@ -6,3 +6,32 @@
 
 <h2>Calories History</h2>
 
+<img src="@Url.Action("CaloricChart", "CalorieCounter", new { foodList = Model.Foodlist })" style="width:600px;height:400px"/>
+<br />
+<p>@Html.ActionLink("Add Items", "InputFood", "CalorieCounter")</p>
+
+
+
+<table class="table table-hover" style="border:hidden;align-content:center">
+    <thead style="border:hidden">
+        <tr>
+            <th>Calories History</th>
+        </tr>
+    </thead>
+    <tbody style="border:hidden">
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Calorie</strong></td>
+            <td><strong>Date</strong></td>
+        </tr>
+        @foreach (var items in Model.Foodlist)
+        {
+            <tr>
+                <td>@items.FoodName</td>
+                <td>@items.Calories</td>
+                <td>@items.DateAdded.Value.ToString("MM/dd/yyyy")</td>
+                <td>@Html.ActionLink("Remove","RemoveItem","CalorieCounter", new { id = items.Id })</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -36,6 +36,8 @@
 
 <p>Gender: @Model.Gender</p>
 
+<p>Goal Weight: @Model.GoalWeight</p>
+
 @{ decimal bmi = 0;}
 
 @try
@@ -81,7 +83,7 @@ if (DateTime.Today >= (Model.LastUpdate.Value.AddDays(7)))
         foreach (var path in Model.UserImg)
         {
     <div>
-        <a href="@Url.Content(@path.Path)" target="_blank"><img src="@Url.Content(@path.Path)" style="height:200px;width:100;" /></a>
+        <a href="@Url.Content(@path.Path)" target="_blank"><img src="@Url.Content(@path.Path)" style="height:200px;width:100;image-orientation:from-image" /></a>
         <br />
         <p>Date uploaded: @path.DateUploaded.Value.ToString("MM/dd/yyyy")</p>
         <br />

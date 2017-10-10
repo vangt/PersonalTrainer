@@ -27,5 +27,26 @@ namespace PersonalTrainer.Controllers
 
             return View(historyVM);
         }
+
+        public ActionResult WeightChart()
+        {
+            WeightViewModel weightVM = new WeightViewModel();
+            var userName = User.Identity.GetUserName();
+            var user = _context.Users.Where(x => x.UserName == userName).First();
+            var weights = _context.ProfileHistory.Where(x => x.UserId == user.Id).ToList();
+            List<string> weight = new List<string>();
+            List<DateTime?> dates = new List<DateTime?>();
+            
+            foreach(var item in weights)
+            {
+                dates.Add(item.DateOfLog);
+                weight.Add(item.Weight);
+            }
+
+            weightVM.Weight = weight;
+            weightVM.DateAdded = dates;
+
+            return View(weightVM);
+        }
     }
 }
