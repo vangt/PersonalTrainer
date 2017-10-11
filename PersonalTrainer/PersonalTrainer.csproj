@@ -337,8 +337,18 @@
     <Compile Include="Migrations\201710101650473_check.Designer.cs">
       <DependentUpon>201710101650473_check.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710101828099_Added bmi and indicators.cs" />
+    <Compile Include="Migrations\201710101828099_Added bmi and indicators.Designer.cs">
+      <DependentUpon>201710101828099_Added bmi and indicators.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710110936061_added exercise model.cs" />
+    <Compile Include="Migrations\201710110936061_added exercise model.Designer.cs">
+      <DependentUpon>201710110936061_added exercise model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ExerciseAPIModel.cs" />
+    <Compile Include="Models\ExerciseModels.cs" />
     <Compile Include="Models\FoodAPI.cs" />
     <Compile Include="Models\FoodInputModels.cs" />
     <Compile Include="Models\FoodItemAPI.cs" />
@@ -428,6 +438,7 @@
     <Content Include="Views\CalorieCounter\ViewItem.cshtml" />
     <Content Include="Views\CalorieCounter\InputDetails.cshtml" />
     <Content Include="Views\History\WeightChart.cshtml" />
+    <Content Include="Views\ManageAccount\GoalsIndicator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -537,6 +548,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710101650473_check.resx">
       <DependentUpon>201710101650473_check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710101828099_Added bmi and indicators.resx">
+      <DependentUpon>201710101828099_Added bmi and indicators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710110936061_added exercise model.resx">
+      <DependentUpon>201710110936061_added exercise model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

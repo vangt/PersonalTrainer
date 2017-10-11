@@ -25,6 +25,8 @@ namespace PersonalTrainer.Models
         public string Goal { get; set; }
         public string GoalWeight { get; set; }
         public string ActivityLevel { get; set; }
+        public string BMI { get; set; }
+        public string BmiIndicator { get; set; }
         public List<string> ActivityList { get; set; }
         public List<string> GenderList { get; set; }
         public DateTime? LastUpdate { get; set; }
@@ -45,6 +47,8 @@ namespace PersonalTrainer.Models
         public DbSet<UserImgPathModel> ImgPaths { get; set; }
 
         public DbSet<FoodInputModels> FoodInput { get; set; }
+
+        public DbSet<ExerciseModels> ExerciseHistory { get; set; }
         
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

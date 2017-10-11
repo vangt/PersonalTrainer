@@ -91,6 +91,33 @@ namespace PersonalTrainer.Controllers
             history.Gender = userProfile.Gender;
             history.ActivityLevel = userProfile.ActivityLevel;
             history.DateOfLog = DateTime.Today;
+            string bmiIndicator = "";
+
+            decimal bmi = (decimal.Parse(userProfile.Weight) * 703) / (decimal.Parse(userProfile.Height) * decimal.Parse(userProfile.Height));
+            bmi = Math.Round(bmi * 100) / 100;
+            if (bmi < 19)
+            {
+                bmiIndicator = "Underweight";
+            }
+            else if (bmi == 19 || bmi < 25)
+            {
+                bmiIndicator = "Healthy";
+            }
+            else if (bmi == 25 || bmi < 30)
+            {
+                bmiIndicator = "Overweight";
+            }
+            else if (bmi == 30 || bmi < 40)
+            {
+                bmiIndicator = "Obese";
+            }
+            else
+            {
+                @bmiIndicator = "Extremely Obese";
+            }
+
+            user.BMI = bmi.ToString();
+            user.BmiIndicator = bmiIndicator;
 
             _context.ProfileHistory.Add(history);
             _context.SaveChanges();
@@ -149,11 +176,17 @@ namespace PersonalTrainer.Controllers
             return RedirectToAction("Index", "ManageAccount");
         }
 
-        public ActionResult Calories()
+        public ActionResult GoalsIndicator()
         {
-            
+            WeightViewModel weightVM = new WeightViewModel();
+            var userName = User.Identity.GetUserName();
+            var user = _context.Users.Where(x => x.UserName == userName).First();
+            var beginingWeights = _context.ProfileHistory.Where(x => x.UserId == user.Id).First();
+            List<string> listItemAdd = new List<string>() { beginingWeights.Weight };
+            weightVM.Weight = listItemAdd;
+            weightVM.User = user;
 
-            return View();
+            return View(weightVM);
         }
     }
 }

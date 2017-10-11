@@ -11,5 +11,7 @@ namespace PersonalTrainer.ViewModels
         public List<string> Weight { get; set; }
 
         public List<DateTime?> DateAdded { get; set; }
+
+        public ApplicationUser User { get; set; }
     }
 }

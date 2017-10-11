@@ -38,12 +38,33 @@
 
 <p>Goal Weight: @Model.GoalWeight</p>
 
-@{ decimal bmi = 0;}
+@*@{ decimal bmi = 0;}
+@{ string bmiIndicator = "";}
 
 @try
 {
     bmi = (decimal.Parse(@Model.Weight) * 703) / (decimal.Parse(@Model.Height) * decimal.Parse(@Model.Height));
     bmi = Math.Round(bmi * 100) / 100;
+    if(int.Parse(bmi) < 19)
+    {
+        bmiIndicator = "<p style=" + "color:blue" + ">Underweight</p>";
+    }
+    else if(int.Parse(bmi) == 19 || bmi < 25)
+    {
+        bmiIndicator = "<p style=" + "color:green" + ">Healthy</p>";
+    }
+    else if(int.Parse(bmi) == 25 || bmi < 30)
+    {
+        bmiIndicator = "<p style=" + "color:yellow" + ">Overweight</p>";
+    }
+    else if(int.Parse(bmi) == 30 || bmi < 40)
+    {
+        bmiIndicator = "<p style=" + "color:orange" + ">Obese</p>";
+    }
+    else
+    {
+        @bmiIndicator = "<p style=" + "color:red" + ">Extremely Obese</p>";
+    }
 }
 catch (Exception e)
 {
@@ -52,9 +73,11 @@ catch (Exception e)
 finally
 {
 
-}
+}*@
 
-<p>Current BMI: @bmi  <a href="http://www.heart.org/HEARTORG/HealthyLiving/WeightManagement/BodyMassIndex/Body-Mass-Index-In-Adults-BMI-Calculator-for-Adults_UCM_307849_Article.jsp?gclid=CjwKEAjwsNfOBRCWl_HevZSJ2i0SJABiE2qWyr8dVOSNRHgplUVdHEfYqpqvTwY6gUnxx3Jp4awvGhoC38nw_wcB#.WdZ4YVtSxD8" target="_blank" title="American Heart Association">What is BMI?</a></p>
+<p>Current BMI: @Model.BMI <a href="http://www.heart.org/HEARTORG/HealthyLiving/WeightManagement/BodyMassIndex/Body-Mass-Index-In-Adults-BMI-Calculator-for-Adults_UCM_307849_Article.jsp?gclid=CjwKEAjwsNfOBRCWl_HevZSJ2i0SJABiE2qWyr8dVOSNRHgplUVdHEfYqpqvTwY6gUnxx3Jp4awvGhoC38nw_wcB#.WdZ4YVtSxD8" target="_blank" title="American Heart Association">What is BMI?</a></p>
+
+<p>According to your BMI: @Model.BmiIndicator</p>
 
 <p>Activity Level: @Model.ActivityLevel</p>
 
