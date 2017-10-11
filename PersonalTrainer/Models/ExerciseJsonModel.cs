@@ -6,22 +6,8 @@ using System.Web;
 
 namespace PersonalTrainer.Models
 {
-        public partial class ExerciseAPI
-        {
-            [JsonProperty("next")]
-            public string Next { get; set; }
 
-            [JsonProperty("count")]
-            public long Count { get; set; }
-
-            [JsonProperty("previous")]
-            public object Previous { get; set; }
-
-            [JsonProperty("results")]
-            public Result[] Results { get; set; }
-        }
-
-        public partial class Result
+        public partial class ExerciseJsonModel
         {
             [JsonProperty("equipment")]
             public long[] Equipment { get; set; }
@@ -30,7 +16,7 @@ namespace PersonalTrainer.Models
             public string LicenseAuthor { get; set; }
 
             [JsonProperty("creation_date")]
-            public string CreationDate { get; set; }
+            public object CreationDate { get; set; }
 
             [JsonProperty("category")]
             public long Category { get; set; }
@@ -66,17 +52,17 @@ namespace PersonalTrainer.Models
             public string Uuid { get; set; }
         }
 
-        public partial class ExerciseAPI
+        public partial class ExerciseJsonModel
     {
-            public static ExerciseAPI FromJson(string json) => JsonConvert.DeserializeObject<ExerciseAPI>(json, Converter.Settings);
+            public static ExerciseJsonModel FromJson(string json) => JsonConvert.DeserializeObject<ExerciseJsonModel>(json, Converter.Settings);
         }
 
-        public static class Serializes
+        public static class Serialized
         {
-            public static string ToJson(this ExerciseAPI self) => JsonConvert.SerializeObject(self, Converter.Settings);
+            public static string ToJson(this ExerciseJsonModel self) => JsonConvert.SerializeObject(self, Converter.Settings);
         }
 
-        public class Converterz
+        public class Convertered
         {
             public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
             {

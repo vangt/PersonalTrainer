@@ -1,0 +1,76 @@
+﻿@model PersonalTrainer.ViewModels.ExerciseHistroyViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Exercise</h2>
+
+<p>Here you can find information about exercises that you have completed, as well as adding exercises.</p>
+
+<br style="grid-row-span:3"/>
+
+<h3>Exercises</h3>
+
+@Html.ActionLink("ADD EXERCISE","AddExercise","Exercise", null)
+
+@try
+{
+    if (Model.ExerciseHistory != null)
+    {
+        <table class="table table-hover" style="border:hidden;align-content:center">
+            <thead style="border:hidden">
+                <tr>
+                    <th>Exercise History</th>
+                </tr>
+            </thead>
+            <tbody style="border:hidden">
+                <tr>
+                    <td><strong>Name</strong></td>
+                    <td><strong></strong></td>
+                    <td><strong>Date</strong></td>
+                </tr>
+                @foreach (var items in Model.ExerciseHistory)
+                {
+                    <tr>
+                        <td>@items.ExerciseName</td>
+                        <td>@items.Description</td>
+                        <td>@items.DateAdded.Value.ToString("MM/dd/yyyy")</td>
+                        @{Dictionary<string, string> muscles = new Dictionary<string, string>();
+                            muscles.Add("1", "Biceps");
+                            muscles.Add("2", "Deltoids");
+                            muscles.Add("3", "Serratus");
+                            muscles.Add("4", "Pectoralis");
+                            muscles.Add("5", "Triceps");
+                            muscles.Add("6", "Abs");
+                            muscles.Add("7", "Gastrocnemius");
+                            muscles.Add("8", "Gluteus Maximus");
+                            muscles.Add("9", "Trapezius");
+                            muscles.Add("10", "Quadriceps");
+                            muscles.Add("11", "Biceps Femoris");
+                            muscles.Add("12", "Latissimus");
+                            muscles.Add("13", "Brachialis");
+                            muscles.Add("14", "Obliquus");
+                            muscles.Add("15", "Soleus");
+
+
+                        }
+                        <td>@foreach (var muscle in items.Muscels)
+                        {
+                            <p>@muscles.Where(x=>x.Value == muscle).ToString()</p>
+                        }</td>
+                        <td>@Html.ActionLink("Remove", "RemoveItem", "CalorieCounter", new { id = items.Id })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+catch (Exception e)
+{
+
+}
+finally
+{
+
+}

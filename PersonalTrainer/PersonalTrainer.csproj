@@ -202,6 +202,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CalorieCounterController.cs" />
+    <Compile Include="Controllers\ExerciseController.cs" />
     <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageAccountController.cs" />
@@ -345,9 +346,14 @@
     <Compile Include="Migrations\201710110936061_added exercise model.Designer.cs">
       <DependentUpon>201710110936061_added exercise model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710111207423_updated exercise model.cs" />
+    <Compile Include="Migrations\201710111207423_updated exercise model.Designer.cs">
+      <DependentUpon>201710111207423_updated exercise model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ExerciseAPIModel.cs" />
+    <Compile Include="Models\ExerciseJsonModel.cs" />
     <Compile Include="Models\ExerciseModels.cs" />
     <Compile Include="Models\FoodAPI.cs" />
     <Compile Include="Models\FoodInputModels.cs" />
@@ -360,10 +366,12 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CalorieCounterViewModel.cs" />
     <Compile Include="ViewModels\ChartViewModel.cs" />
+    <Compile Include="ViewModels\ExerciseHistroyViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\PersonalInfoUpdaterViewModel.cs" />
     <Compile Include="ViewModels\ProfileUpdaterViewModel.cs" />
     <Compile Include="ViewModels\SearchCaloriesViewModel.cs" />
+    <Compile Include="ViewModels\SearchExerciseViewModel.cs" />
     <Compile Include="ViewModels\WeightViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -439,6 +447,9 @@
     <Content Include="Views\CalorieCounter\InputDetails.cshtml" />
     <Content Include="Views\History\WeightChart.cshtml" />
     <Content Include="Views\ManageAccount\GoalsIndicator.cshtml" />
+    <Content Include="Views\Exercise\Index.cshtml" />
+    <Content Include="Views\Exercise\AddExercise.cshtml" />
+    <Content Include="Views\Exercise\AddedExercise.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -554,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710110936061_added exercise model.resx">
       <DependentUpon>201710110936061_added exercise model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710111207423_updated exercise model.resx">
+      <DependentUpon>201710111207423_updated exercise model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

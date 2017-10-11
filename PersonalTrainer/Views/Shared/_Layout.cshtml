@@ -26,8 +26,9 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Weight History", "Index", "History")</li>
-                        <li>@Html.ActionLink("Calories History", "Index", "CalorieCounter")</li>
+                        <li>@Html.ActionLink("Weight", "Index", "History")</li>
+                        <li>@Html.ActionLink("Calories", "Index", "CalorieCounter")</li>
+                        <li>@Html.ActionLink("Exercise", "Index", "Exercise")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")

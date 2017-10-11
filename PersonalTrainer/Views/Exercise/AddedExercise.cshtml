@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "AddedExercise";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ADDED EXERCISE</h2>
+
+<p>You have successfully added the exercise you have completed to your workout history.</p>
+
+<p>Please click below to return to add more exercises.</p>
+
+@Html.ActionLink("Add More","AddExercise", "Exercise");
