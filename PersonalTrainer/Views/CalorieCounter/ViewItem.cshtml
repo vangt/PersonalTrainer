@@ -5,17 +5,30 @@
 }
 
 <h2>@Model.FoodName</h2>
+@*<br/>
+<tr>
+    <td>Weight: @Model.Weight</td>
+</tr>*@
+<br />
+<tr>
+    <td>Calories: @Model.Calories</td>
+</tr>
+<br />
+<tr>
+    <td>Fats: @Model.Fat</td>
+</tr>
+<br />
+<tr>
+    <td>Carbohydrates: @Model.Carb</td>
+</tr>
+<br />
+<tr>
+   <td>Protiens: @Model.Protien</td>
+</tr>
+<br />
+<tr>
+    <td>Measure: @Model.Measure</td>
+</tr>
+<br />
 
-<p>Weight: @Model.Weight</p>
-
-<p>Calories: @Model.Calories</p>
-
-<p>Fats: @Model.Fat</p>
-
-<p>Carbohydrates: @Model.Carb</p>
-
-<p>Protiens: @Model.Protien</p>
-
-<p>Measure: @Model.Measure</p>
-
-<p>@Html.ActionLink("ADD", "AddItem", "CalorieCounter", new { id = Model.FoodId }, null)</p>
+@Html.ActionLink("Return", "Index", "CalorieCounter")

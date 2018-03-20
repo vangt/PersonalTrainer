@@ -142,26 +142,64 @@ namespace PersonalTrainer.Controllers
             exerciseJsonModel = json;
 
             choosen.ExerciseName = exerciseJsonModel.Name;
-            choosen.Description = exerciseJsonModel.Description;
+            var description = exerciseJsonModel.Description;
+            var newDescription = description.Replace("<p>", "");
+            newDescription = newDescription.Replace("</p>", "");
+            choosen.Description = newDescription;
             choosen.UserId = user.Id;
             choosen.DateAdded = DateTime.Today;
             List<string> muscles = new List<string>();
-
-            foreach(var muscle in exerciseJsonModel.Muscles)
+                        
+            foreach (var muscle in exerciseJsonModel.Muscles)
             {
-                muscles.Add(muscle.ToString());
+                Dictionary<string, string> musclesGroup = new Dictionary<string, string>();
+                musclesGroup.Add("1", "Biceps");
+                musclesGroup.Add("2", "Deltoids");
+                musclesGroup.Add("3", "Serratus");
+                musclesGroup.Add("4", "Pectoralis");
+                musclesGroup.Add("5", "Triceps");
+                musclesGroup.Add("6", "Abs");
+                musclesGroup.Add("7", "Gastrocnemius");
+                musclesGroup.Add("8", "Gluteus Maximus");
+                musclesGroup.Add("9", "Trapezius");
+                musclesGroup.Add("10", "Quadriceps");
+                musclesGroup.Add("11", "Biceps Femoris");
+                musclesGroup.Add("12", "Latissimus");
+                musclesGroup.Add("13", "Brachialis");
+                musclesGroup.Add("14", "Obliquus");
+                musclesGroup.Add("15", "Soleus");
+
+                string itemToAdd;
+
+                if (musclesGroup.ContainsKey(muscle.ToString()))
+                {
+                    itemToAdd = musclesGroup[muscle.ToString()];
+                    muscles.Add(itemToAdd);
+                }
+                
             }
-            choosen.Muscels = muscles;
+            choosen.Muscles = muscles;
 
             _context.ExerciseHistory.Add(choosen);
             _context.SaveChanges();
+            choosen.TableID = choosen.Id;
+            _context.SaveChanges();
 
-            return RedirectToAction("Index", "Exercise");
+            return RedirectToAction("AddedExercise", "Exercise");
         }
 
         public ActionResult AddedExercise()
         {
             return View();
+        }
+
+        public ActionResult RemoveItem(int Id)
+        {
+            ExerciseModels item = _context.ExerciseHistory.Where(x => x.Id == Id).First();
+            _context.ExerciseHistory.Remove(item);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Exercise");
         }
     }
 }

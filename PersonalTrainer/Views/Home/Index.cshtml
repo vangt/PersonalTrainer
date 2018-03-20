@@ -7,22 +7,42 @@
     <p class="lead">Personal Trainer is free online personal trainer that anyone can utilize.</p>
 </div>
 
+@if (User.Identity.IsAuthenticated == false)
+{
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Register to start checking your progress!</h2>
         <p>
             Register and get started on a whole new outlook on life!  If you are new or even a veteran to the workout life, register to get some benefical information.
         </p>
         <p><a class="btn btn-default" href="http://localhost:41172/Account/Register">Register &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more information</h2>
-        <p>Information here is used to better yourself and give you better way of following your progress.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Login to stay on track!</h2>
+        <p>If you already have an account, login using the link below to continue to update your profile, log new information, or change existing information.</p>
+        <p><a class="btn btn-default" href="http://localhost:41172/Account/Login">Login &raquo;</a></p>
     </div>
-    <div class="col-md-4">
+    @*<div class="col-md-4">
         <h2>Power</h2>
         <p>Everything here gives you options and the power to choose.</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+    </div>*@
 </div>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Update your profile.</h2>
+            <p>
+                You can use this link to update your current profile information.
+            </p>
+            <p><a class="btn btn-default" href="http://localhost:41172/ManageAccount/Index">Profile &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Calories! Calories! Calories!</h2>
+            <p>Use the link below to add your foods to calculate how much you have been eating.</p>
+            <p><a class="btn btn-default" href="http://localhost:41172/CalorieCounter/Index">Add or Remove Food &raquo;</a></p>
+        </div>
+    </div>
+}

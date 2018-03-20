@@ -9,6 +9,8 @@ namespace PersonalTrainer.Models
     {
         public int Id { get; set; }
 
+        public int? TableId { get; set; }
+
         public string FoodId { get; set; }
 
         public string UserId { get; set; }

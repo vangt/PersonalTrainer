@@ -19,7 +19,7 @@
 @using (Html.BeginForm())
 {
     <div class="form-group">
-        @Html.Label("Select a muscel", new { @class = "col-md-2 control-label" })
+        @Html.Label("Select a muscle", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.DropDownListFor(m => m.SearchMuscle, new SelectList(Model.Muscles.Values))
         </div>

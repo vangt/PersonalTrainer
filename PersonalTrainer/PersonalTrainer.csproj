@@ -350,6 +350,34 @@
     <Compile Include="Migrations\201710111207423_updated exercise model.Designer.cs">
       <DependentUpon>201710111207423_updated exercise model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803191620487_Add table id.cs" />
+    <Compile Include="Migrations\201803191620487_Add table id.Designer.cs">
+      <DependentUpon>201803191620487_Add table id.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803191630364_TableId Nullable.cs" />
+    <Compile Include="Migrations\201803191630364_TableId Nullable.Designer.cs">
+      <DependentUpon>201803191630364_TableId Nullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803191704290_tableID added.cs" />
+    <Compile Include="Migrations\201803191704290_tableID added.Designer.cs">
+      <DependentUpon>201803191704290_tableID added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803192145277_added ft and in.cs" />
+    <Compile Include="Migrations\201803192145277_added ft and in.Designer.cs">
+      <DependentUpon>201803192145277_added ft and in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803192158111_double checked height.cs" />
+    <Compile Include="Migrations\201803192158111_double checked height.Designer.cs">
+      <DependentUpon>201803192158111_double checked height.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803192219404_updated foodviewmodel.cs" />
+    <Compile Include="Migrations\201803192219404_updated foodviewmodel.Designer.cs">
+      <DependentUpon>201803192219404_updated foodviewmodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803200116544_added goal weight to profile model.cs" />
+    <Compile Include="Migrations\201803200116544_added goal weight to profile model.Designer.cs">
+      <DependentUpon>201803200116544_added goal weight to profile model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ExerciseAPIModel.cs" />
@@ -368,6 +396,7 @@
     <Compile Include="ViewModels\ChartViewModel.cs" />
     <Compile Include="ViewModels\ExerciseHistroyViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
+    <Compile Include="ViewModels\FoodInputViewModel.cs" />
     <Compile Include="ViewModels\PersonalInfoUpdaterViewModel.cs" />
     <Compile Include="ViewModels\ProfileUpdaterViewModel.cs" />
     <Compile Include="ViewModels\SearchCaloriesViewModel.cs" />
@@ -568,6 +597,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710111207423_updated exercise model.resx">
       <DependentUpon>201710111207423_updated exercise model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803191620487_Add table id.resx">
+      <DependentUpon>201803191620487_Add table id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803191630364_TableId Nullable.resx">
+      <DependentUpon>201803191630364_TableId Nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803191704290_tableID added.resx">
+      <DependentUpon>201803191704290_tableID added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803192145277_added ft and in.resx">
+      <DependentUpon>201803192145277_added ft and in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803192158111_double checked height.resx">
+      <DependentUpon>201803192158111_double checked height.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803192219404_updated foodviewmodel.resx">
+      <DependentUpon>201803192219404_updated foodviewmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803200116544_added goal weight to profile model.resx">
+      <DependentUpon>201803200116544_added goal weight to profile model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

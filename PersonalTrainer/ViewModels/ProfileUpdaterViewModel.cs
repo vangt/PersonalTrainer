@@ -22,8 +22,15 @@ namespace PersonalTrainer.ViewModels
         [MaxLength(2)]
         [MinLength(2)]
         [RegularExpression("[0-9]*$", ErrorMessage = "Height must be numeric")]
-        [Display(Name = "Height (INCHES)")]
-        public string Height { get; set; }
+        [Display(Name = "Height (Feet)")]
+        public string HeightFeet { get; set; }
+
+        [Required]
+        [MaxLength(2)]
+        [MinLength(2)]
+        [RegularExpression("[0-9]*$", ErrorMessage = "Height must be numeric")]
+        [Display(Name = "Height (Inches)")]
+        public string HeightInches { get; set; }
 
         [Required]
         [MaxLength(3)]

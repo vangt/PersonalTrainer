@@ -122,19 +122,63 @@ namespace PersonalTrainer.Controllers
             itemNutrient.Measure = foodItem.Report.Foods[0].Measure;
 
             var test = results.Report.Foods[0].Nutrients;
+
             foreach (var item in test)
             {
                 if(item.NutrientId == "203")
                 {
-                    itemNutrient.Protien = Math.Round(double.Parse(item.Value)).ToString();
+                    try
+                    {
+                        if (item.Value != null && IsDigits(item.Value) == true)
+                        {
+                            double Protien = Math.Round(double.Parse(item.Value));
+                            itemNutrient.Protien = Protien.ToString();
+                        }
+                        else
+                        {
+                            itemNutrient.Protien = "0";
+                        }
+                    }
+                    catch(NullReferenceException)
+                    {
+                    }
+                    
                 }
                 else if(item.NutrientId == "204")
                 {
-                    itemNutrient.Fat = Math.Round(double.Parse(item.Value)).ToString();
+                    try
+                    {
+                        if (item.Value != null && IsDigits(item.Value) == true)
+                        {
+                            double Fat = Math.Round(double.Parse(item.Value));
+                            itemNutrient.Fat = Fat.ToString();
+                        }
+                        else
+                        {
+                            itemNutrient.Fat = "0";
+                        }
+                    }
+                    catch (NullReferenceException)
+                    {
+                    }
                 }
                 else if(item.NutrientId == "205")
                 {
-                    itemNutrient.Carb = Math.Round(double.Parse(item.Value)).ToString();
+                    try
+                    {
+                        if (item.Value != null && IsDigits(item.Value) == true)
+                        {
+                            double Carb = Math.Round(double.Parse(item.Value));
+                            itemNutrient.Carb = Carb.ToString();
+                        }
+                        else
+                        {
+                            itemNutrient.Carb = "0";
+                        }
+                    }
+                    catch (NullReferenceException)
+                    {
+                    }
                 }
             }
 
@@ -144,8 +188,29 @@ namespace PersonalTrainer.Controllers
 
             _context.FoodInput.Add(itemNutrient);
             _context.SaveChanges();
-            
+            itemNutrient.TableId = itemNutrient.Id;
+            _context.SaveChanges();
+
             return RedirectToAction("InputedItem", "CalorieCounter");
+        }
+
+        public bool IsDigits(string num)
+        {
+            bool number = false;
+
+            foreach (char c in num)
+            {
+                if (c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9' || c == '.')
+                {
+                    number = true;
+                }
+                else
+                {
+                    number = false;
+                }
+            }
+
+            return number;
         }
 
         public ActionResult InputedItem()
@@ -153,50 +218,55 @@ namespace PersonalTrainer.Controllers
             return View();
         }
 
-        public ActionResult ViewItem(string id)
-        {
-            var userName = User.Identity.GetUserName();
-            var user = _context.Users.Where(x => x.UserName == userName).First();
-            FoodItemApi foodItem = new FoodItemApi();
-            FoodInputModels foodInput = new FoodInputModels();
+        //public ActionResult ViewItem(string id)
+        //{
+        //    var userName = User.Identity.GetUserName();
+        //    var user = _context.Users.Where(x => x.UserName == userName).First();
+        //    FoodItemApi foodItem = new FoodItemApi();
+        //    FoodInputModels foodInput = new FoodInputModels();
 
-            string itemId = id;
-            string url = "https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=0z1GpkjkpfVWgsun2yHlxCBg4Oy7hFUUBJ3wLu2j&nutrients=204&nutrients=203&nutrients=205&ndbno=" + id;
+        //    string itemId = id;
+        //    string url = "https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=0z1GpkjkpfVWgsun2yHlxCBg4Oy7hFUUBJ3wLu2j&nutrients=204&nutrients=203&nutrients=205&ndbno=" + id;
 
-            var client = new RestClient(url);
-            var request = new RestRequest(Method.GET);
-            request.AddHeader("postman-token", "e29cf453-ed2b-3dbe-3c1a-9214d60fbc73");
-            request.AddHeader("cache-control", "no-cache");
-            IRestResponse response = client.Execute(request);
+        //    var client = new RestClient(url);
+        //    var request = new RestRequest(Method.GET);
+        //    request.AddHeader("postman-token", "e29cf453-ed2b-3dbe-3c1a-9214d60fbc73");
+        //    request.AddHeader("cache-control", "no-cache");
+        //    IRestResponse response = client.Execute(request);
 
-            var results = JsonConvert.DeserializeObject<FoodItemApi>(response.Content);
-            foodItem = results;
+        //    var results = JsonConvert.DeserializeObject<FoodItemApi>(response.Content);
+        //    foodItem = results;
 
-            return View(foodItem);
-        }
+        //    return View(foodItem);
+        //}
 
+        [HttpGet]
         public ActionResult InputDetails()
         {
-            FoodInputModels foodItem = new FoodInputModels();
-            var userName = User.Identity.GetUserName();
-            var user = _context.Users.Where(x => x.UserName == userName).First();
-            foodItem.UserId = user.Id;
+            FoodInputViewModel foodItem = new FoodInputViewModel();
 
             return View(foodItem);
         }
 
-        public ActionResult InputDeatil(FoodInputModels foodItem)
+        [HttpPost]
+        public ActionResult InputDetails(FoodInputViewModel foodItem)
         {
+            var userName = User.Identity.GetUserName();
+            var user = _context.Users.Where(x => x.UserName == userName).First();
             FoodInputModels item = new FoodInputModels();
+            item.UserId = user.Id;
             item.FoodName = foodItem.FoodName;
             item.Calories = foodItem.Calories;
             item.Fat = foodItem.Fat;
             item.Carb = foodItem.Carb;
             item.Protien = foodItem.Protien;
             item.DateAdded = DateTime.Today;
-            item.UserId = foodItem.UserId;
+            _context.FoodInput.Add(item);
+            _context.SaveChanges();
+            item.TableId = item.Id;
+            _context.SaveChanges();
 
-            return RedirectToAction("InputedItem", "CalorieCounter");
+            return RedirectToAction("Index", "CalorieCounter");
         }
 
         public ActionResult RemoveItem(int id)
@@ -206,6 +276,13 @@ namespace PersonalTrainer.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index", "CalorieCounter");
+        }
+
+        public ActionResult ViewItem(int id)
+        {
+            FoodInputModels item = _context.FoodInput.Where(x => x.Id == id).First();
+            
+            return View(item);
         }
     }
 }

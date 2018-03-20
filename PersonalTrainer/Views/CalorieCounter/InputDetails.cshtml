@@ -1,4 +1,4 @@
-﻿@model PersonalTrainer.Models.FoodInputModels
+﻿@model PersonalTrainer.ViewModels.FoodInputViewModel
 @{
     ViewBag.Title = "InputDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,42 +10,35 @@
 {
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
-        @Html.Label("Name of food item", new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.FoodName, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.FoodName, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.Label("Calories", new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Calories, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.Label("Fats", new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.Fat, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Fat, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.Label("Carbohydrates", new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.Carb, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Carb, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.Label("Protiens", new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.Protien, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Protien, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.Label("Calories", new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.Calories, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Calories, new { @class = "form-control" })
         </div>
     </div>
-
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Save Item" />

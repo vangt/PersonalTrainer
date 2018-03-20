@@ -17,12 +17,12 @@
 
 <br style="grid-row-span:2" />
 
-<p>Please enter the product name ( ex. ).</p>
+<p>Please enter the product name ( example: beef, pork, pizza ).</p>
 
 @using (Html.BeginForm())
 {
     <div class="form-group">
-        @Html.LabelFor(m => m.SearchWordInput, new { @class = "col-md-2 control-label" })
+        @Html.Label("Input A Word To Search", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.SearchWordInput, new { @class = "form-control" })
         </div>
@@ -47,8 +47,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Date</th>
-                    <th>Weight</th>
+                    <th>Name</th>
 
                 </tr>
                 @foreach (var items in Model.FoodApi.List.Item)
@@ -56,7 +55,7 @@
                     <tr>
                         <td>@items.Name</td>
                         <td>@Html.ActionLink("Add", "AddItem", "CalorieCounter", new { id = items.Ndbno}, null)</td>
-                        <td>@Html.ActionLink("View", "ViewItem", "CalorieCounter", new { id = items.Ndbno}, null)</td>
+                        @*<td>@Html.ActionLink("View", "ViewItem", "CalorieCounter", new { id = items.Ndbno}, null)</td>*@
                     </tr>
                 }
             </tbody>

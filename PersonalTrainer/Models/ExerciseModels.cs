@@ -9,6 +9,8 @@ namespace PersonalTrainer.Models
     {
         public int Id { get; set; } 
 
+        public int? TableID { get; set; }
+
         public DateTime? DateAdded { get; set; }
 
         public string UserId { get; set; }
@@ -19,6 +21,6 @@ namespace PersonalTrainer.Models
 
         public string Description { get; set; }
 
-        public List<string> Muscels { get; set; }
+        public List<string> Muscles { get; set; }
     }
 }

@@ -77,9 +77,11 @@ namespace PersonalTrainer.Controllers
             var user = _context.Users.Where(x => x.UserName == userName).First();
 
             user.Age = userProfile.Age;
-            user.Height = userProfile.Height;
+            user.HeightFeet = userProfile.HeightFeet;
+            user.HeightInches = userProfile.HeightInches;
             user.Weight = userProfile.Weight;
             user.Gender = userProfile.Gender;
+            user.GoalWeight = userProfile.GoalWeight;
             user.ActivityLevel = userProfile.ActivityLevel;
             user.LastUpdate = DateTime.Today;
 
@@ -87,13 +89,17 @@ namespace PersonalTrainer.Controllers
             history.UserId = user.Id;
             history.Age = userProfile.Age;
             history.Weight = userProfile.Weight;
-            history.Height = userProfile.Height;
+            history.HeightFeet = userProfile.HeightFeet;
+            history.HeightInches = userProfile.HeightInches;
             history.Gender = userProfile.Gender;
+            history.GoalWeight = userProfile.GoalWeight;
             history.ActivityLevel = userProfile.ActivityLevel;
             history.DateOfLog = DateTime.Today;
             string bmiIndicator = "";
 
-            decimal bmi = (decimal.Parse(userProfile.Weight) * 703) / (decimal.Parse(userProfile.Height) * decimal.Parse(userProfile.Height));
+            decimal Height = (decimal.Parse(userProfile.HeightFeet) * 12) + decimal.Parse(userProfile.HeightInches);
+
+            decimal bmi = (decimal.Parse(userProfile.Weight)) / (Height * Height) * 703;
             bmi = Math.Round(bmi * 100) / 100;
             if (bmi < 19)
             {

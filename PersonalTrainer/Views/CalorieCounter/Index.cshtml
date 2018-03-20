@@ -11,7 +11,6 @@
 <p>@Html.ActionLink("Add Items", "InputFood", "CalorieCounter")</p>
 
 
-
 <table class="table table-hover" style="border:hidden;align-content:center">
     <thead style="border:hidden">
         <tr>
@@ -21,16 +20,20 @@
     <tbody style="border:hidden">
         <tr>
             <td><strong>Name</strong></td>
+            <td><strong>View</strong></td>
             <td><strong>Calorie</strong></td>
             <td><strong>Date</strong></td>
         </tr>
+
+            
         @foreach (var items in Model.Foodlist)
         {
             <tr>
                 <td>@items.FoodName</td>
+                <td>@Html.ActionLink("View", "ViewItem", "CalorieCounter", new { id = items.TableId }, null)</td>
                 <td>@items.Calories</td>
                 <td>@items.DateAdded.Value.ToString("MM/dd/yyyy")</td>
-                <td>@Html.ActionLink("Remove","RemoveItem","CalorieCounter", new { id = items.Id })</td>
+                <td>@Html.ActionLink("Remove", "RemoveItem", "CalorieCounter", new { id = items.TableId }, null)</td>
             </tr>
         }
     </tbody>

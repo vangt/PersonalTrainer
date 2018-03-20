@@ -8,6 +8,9 @@
 
 <p>You have successfully added the exercise you have completed to your workout history.</p>
 
-<p>Please click below to return to add more exercises.</p>
+<p>Please click the links below to return to add more exercises or go back to the exercise history.</p>
 
-@Html.ActionLink("Add More","AddExercise", "Exercise");
+@Html.ActionLink("Add More","AddExercise", "Exercise")
+<br />
+
+@Html.ActionLink("Exercise History", "Index", "Exercise")

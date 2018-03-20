@@ -19,7 +19,8 @@ namespace PersonalTrainer.Models
         public string Zip { get; set; }
         public string Phone { get; set; }
         public string Weight { get; set; }
-        public string Height { get; set; }
+        public string HeightFeet { get; set; }
+        public string HeightInches { get; set; }
         public string Age { get; set; }
         public string Gender { get; set; }
         public string Goal { get; set; }
